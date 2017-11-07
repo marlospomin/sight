@@ -1,1 +1,1 @@
-# sight
+# Sight.js

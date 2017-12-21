@@ -1,7 +1,7 @@
 {
   "name": "sight-js",
   "version": "1.0.0",
-  "description": "A wow.js alternative.",
+  "description": "A vanilla wow.js alternative.",
   "main": "dist/sight.js",
   "repository": "marlospomin/sight",
   "author": "Marlos Pomin",

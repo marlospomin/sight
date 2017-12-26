@@ -1,21 +1,21 @@
 const defaultConfig = {
   // Default selector
   selector: '[data-sight]',
-  // Default margin
-  rootMargin: 0,
   // Default threshold
-  threshold: 0.5
+  threshold: [0.5]
 }
 
 export default function (config = {}) {
   // Merge defaults into config
-  const { selector, rootMargin, threshold } = { ...defaultConfig, ...config}
+  const { selector, threshold } = { ...defaultConfig, ...config}
   // Select elements
   const elements = document.querySelectorAll(selector)
   // Create an observer
   let observer
-  // Count the elements
-  let elementCount = elements.length
+  // If IntersectionObserver is not supported break
+  if (!('IntersectionObserver' in window)) {
+    return
+  }
 
   function observe(elements) {
     // Create the new observer
@@ -28,23 +28,12 @@ export default function (config = {}) {
   }
 
   function onIntersection(entries) {
-    // Disconnect if we saw everything
-    if (elementCount === 0) {
-      observer.disconnect()
-    }
-
     Array.from(entries).forEach(entry => {
       // For each entry remove an element from the count
-      if (entry.intersectionRatio > threshold) {
-        elementCount--
-      }
-
-      // Stop watching the element
-      observer.unobserve(entry.target)
-
-      // Work
       if (entry.isIntersecting) {
-        console.log(elementCount + ' ' + 'intersecting')
+        console.log('debugging')
+        // Stop watching the element
+        observer.unobserve(entry.target)
       }
     })
   }

@@ -1,8 +1,8 @@
 const defaultConfig = {
   // Default selector
   selector: '[data-sight]',
-  // Default threshold
-  threshold: [0.5]
+  // Default threshold => Doesn't work for some reason
+  threshold: 0.5
 }
 
 export default function (config = {}) {
@@ -30,14 +30,15 @@ export default function (config = {}) {
   function onIntersection(entries) {
     Array.from(entries).forEach(entry => {
       // For each entry remove an element from the count
-      if (entry.isIntersecting) {
-        console.log('debugging')
+      if (entry.intersectionRatio > 0) {
+        // Animate the element => Hack w/ setTimeout
+        setTimeout(() => entry.target.classList.add('animated'), 300)
         // Stop watching the element
         observer.unobserve(entry.target)
       }
     })
   }
-
+  
   // Run the observer agains the marked elements
   return observe(elements)
 }

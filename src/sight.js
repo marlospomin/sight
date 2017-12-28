@@ -32,13 +32,13 @@ export default function (config = {}) {
       // For each entry remove an element from the count
       if (entry.intersectionRatio > 0) {
         // Animate the element => Hack w/ setTimeout
-        setTimeout(() => entry.target.classList.add('animated'), 300)
+        setTimeout(() => requestAnimationFrame(() => entry.target.classList.add('animated')), 300)
         // Stop watching the element
         observer.unobserve(entry.target)
       }
     })
   }
-  
+
   // Run the observer agains the marked elements
   return observe(elements)
 }

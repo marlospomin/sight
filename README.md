@@ -2,6 +2,13 @@
 
 > A vanilla wow.js alternative.
 
+## Features
+
+* Using intersection Observer API.
+* Simple and small.
+* Performant.
+* **Requires** [animate.css](https://github.com/daneden/animate.css) to work.
+
 ## Install
 
 ``` bash
@@ -22,7 +29,7 @@ import sight from 'sight'
 const sight = require('sight');
 ```
 
-Alternatively you can include a minified version of sight (or the source code, up to you) via direct file or using our **CDN** link.
+Alternatively you can include a minified version of the script (or the source code, up to you) via direct file or using our **CDN** link.
 
 ``` html
 <body>
@@ -32,7 +39,7 @@ Alternatively you can include a minified version of sight (or the source code, u
 
 ## Usage
 
-Add ```data-sight``` to your elements like the example below.
+Add ```data-sight``` to your elements and the animate class you wish to use, like the example below.
 
 ``` html
 <img data-sight src="" alt="" class="shake">...</img>

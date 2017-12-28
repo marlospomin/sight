@@ -51,7 +51,9 @@
         if (entry.intersectionRatio > 0) {
           // Animate the element => Hack w/ setTimeout
           setTimeout(function () {
-            return entry.target.classList.add('animated');
+            return requestAnimationFrame(function () {
+              return entry.target.classList.add('animated');
+            });
           }, 300);
           // Stop watching the element
           observer.unobserve(entry.target);

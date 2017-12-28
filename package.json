@@ -1,12 +1,29 @@
 {
   "name": "sight-js",
-  "version": "1.0.0",
   "description": "A vanilla wow.js alternative.",
+  "version": "1.0.0",
+  "author": "Marlos Pomin",
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "sight",
+    "wow",
+    "alternative",
+    "fast",
+    "modern",
+    "scroll",
+    "reveal",
+    "animate"
+  ],
+  "license": "MIT",
   "main": "dist/sight.js",
   "repository": "marlospomin/sight",
-  "author": "Marlos Pomin",
-  "license": "MIT",
-  "private": true,
+  "scripts": {
+    "gulp": "gulp",
+    "build": "gulp build",
+    "reload": "gulp reload"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",

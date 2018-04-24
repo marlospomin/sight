@@ -39,6 +39,6 @@ export default function (config = {}) {
     })
   }
 
-  // Run the observer agains the marked elements
+  // Run the observer against the marked elements
   return observe(elements)
 }
